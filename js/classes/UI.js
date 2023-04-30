@@ -1,17 +1,16 @@
 import { relleno, resultado } from "../selectores.js";
-import { pais, ciudad } from "../selectores.js";
+import { ciudad } from "../selectores.js";
 
 export default class UI{
 
-    mostrarClima(temperatura, min, max){
+    mostrarClima(temperatura, min, max, ciudad){
         
-        this.limpiarHTML();
         const divClima = document.createElement('DIV');
         divClima.classList.add('text-center');
         relleno.remove();
 
         divClima.innerHTML = `
-            <p class="text-2xl text-white font-bold">${ciudad.value}</p>
+            <p class="text-2xl text-white font-bold">Ciudad: ${ciudad}</p>
             <p class="text-4xl text-white font-bold">${temperatura}°C</p>
             <p class="font-light text-white text-lg">Temperatura mínima: ${min}°C</p>
             <p class="font-light text-white text-lg">Temperatura máxima: ${max}°C</p>
@@ -42,6 +41,29 @@ export default class UI{
                 mensajeAlerta.remove();
             }, 3000);
         }
+
+    }
+
+    mostrarSpinner(){
+        this.limpiarHTML()
+        const spinner = document.createElement('div');
+        spinner.innerHTML = `
+            <div class="sk-fading-circle">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+        `
+        resultado.appendChild(spinner);
 
     }
 
