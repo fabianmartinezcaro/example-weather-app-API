@@ -5,3 +5,4 @@ export const ciudad = document.querySelector('#ciudad');
 
 // Contenedor Resultado
 export const resultado = document.querySelector('#resultado');
+export const relleno = document.querySelector('#relleno');

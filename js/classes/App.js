@@ -1,7 +1,8 @@
 import { formulario } from "../selectores.js"
-import { validarFormulario } from "../funciones.js";
+import { buscarClima } from "../funciones.js";
 
 export default class App{
+
     constructor() {
         this.initApp();
     }
@@ -9,7 +10,7 @@ export default class App{
     initApp(){
 
         document.addEventListener('DOMContentLoaded', () => {
-            formulario.addEventListener('submit', validarFormulario);
+            formulario.addEventListener('submit', buscarClima);
         })
 
     }
